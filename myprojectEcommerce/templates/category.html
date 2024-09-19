@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+  {% if category %}
+    {{ category.description|truncatewords:155 }}
+  {% else %}
+    Your fallback meta description here
+  {% endif %}
+{% endblock %}
+
+{% block title %}
+  {% if category %}
+    {{ category.name }} - ABC Company
+  {% else %}
+    See Our Data
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% if category %}
+    <div class="row my_row">
+      <div class="mx_auto">
+        <p><a href="{% url 'myapp:allProdCat' %}">Back to All Categories</a></p>
+      </div>
+    </div>
+  {% endif %}
+
+  <div>
+    {% if category %}
+      <div class="mx_auto">
+        <img class="my_image" src="{{ category.image.url }}" alt="{{ category.name }}">
+      </div>
+      <div>
+        <h1 class="text-center my_title">{{ category.name }}</h1>
+        <p class="text-justify">{{ category.description }}</p>
+      </div>
+    {% else %}
+      <div>
+        <img class="my_image my_image_padding" src="{% static 'img/banner.jpg' %}" alt="Our Product">
+      </div>
+      <div>
+        <h1>OUR PRODUCTS</h1>
+        <p class="text-center">A business description provides an overview of what your company does and what makes it unique. It introduces your brand, offering prospective investors insight.</p>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="container">
+    <div class="row">
+      {% for product in products %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card h-100 text-center">
+            <a href="{{ product.get_url }}">
+              <img class="card-img-top my_image" src="{{ product.images.url }}" alt="{{ product.names }}">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">{{ product.names }}</h5>
+              <p class="card-text">{{ product.decs }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if products.paginator.num_pages > 1 %}
+      <div class="mx-auto">
+        <hr>
+        <div class="text-center">
+          {% for pg in products.paginator.page_range %}
+            <a href="?page={{ pg }}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">
+              {{ pg }}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

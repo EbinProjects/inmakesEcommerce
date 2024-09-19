@@ -1,0 +1,227 @@
+body{
+ font-family: "Poppins", sans-serif;
+  font-weight: 800; /* "Semibold" corresponds to font-weight 600 */
+}
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+.nav-letter{
+letter-spacing : .2em;
+font-size : 14px;
+text-transform : uppercase;
+}
+
+.dropdown-item{
+letter-spacing : .2em;
+font-size : 14px;
+text-transform : uppercase;
+}
+footer {
+  background-color : #ff5733;
+  height : 60px
+}
+
+footer  p{
+ padding-top : 20px;
+ font-size : 16px
+
+}
+
+/*category*/
+
+.my_row{
+padding-top : 15px;
+}
+.my_row .mx_auto{
+  color : #000;
+  font-size : 16px;
+}
+
+.my_image{
+  width : 100%;
+  height :auto;
+
+}
+
+.my_title {
+  font-size : 16px;
+  text-transform : uppercase;
+  letter-spacing : .2em;
+}
+.my_image_padding{
+padding : 5px;
+}
+
+.my_bottom_margin{
+  margin_bottom : 10px
+}
+
+.car-body h4{
+ font-size : 15px;
+  text-transform : uppercase;
+  letter-spacing : .3em
+}
+
+.my_pro_row{
+padding-top : 15px;
+padding-botom : 20px;
+
+}
+
+.my_pro_row.mx_auto{
+color : #000;
+font-size : 16px;
+text-decoration : none;
+}
+
+.my_pro_title{
+font-size:16px;
+text-transform: uppercase;
+letter-spacing:.2em;
+padding-top : 15px;
+padding-bottom : 10px;
+}
+
+.my_pro_text{
+padding-right : 20px;
+}
+
+.my-search{
+padding-right : 20px;
+}
+.my_custom_tb{
+font-size : 14px
+min-width : 400px
+}
+.my-custom-thead{
+font-weight:normal;
+text-transform:uppercase;
+letter-spacing:.2em;
+background-color:#ff5733
+}
+.my_custom_button{
+ margin_top : 5px
+}
+.custom_icon{
+
+}
+
+.custom_a{
+text-decoration:none;
+color :#ff5733 !important;
+}
+.custom_image {
+    width: 150px !important; /* Set a fixed width */
+    height: 150px !important; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image fits within the width and height without distortion */
+    border-radius: 8px; /* Optional: Rounds the corners */
+    margin: 0 auto; /* Centers the image horizontally */
+    display: block; /* Ensures the image is treated as a block-level element */
+}

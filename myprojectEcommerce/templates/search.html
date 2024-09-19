@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+    We have a variety of products
+{% endblock %}
+
+{% block title %}
+    Search Our Data
+{% endblock %}
+
+{% block content %}
+<div>
+    <p class="text-center my-search">
+        You have searched for: <b>{{ query }}</b>
+    </p>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% if products %}
+            {% for product in products %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100 text-center">
+                        <a href="{{ product.get_url }}">
+                            <img class="card-img-top my_image" src="{{ product.images.url }}" alt="{{ product.names }}">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.names }}</h5>
+                            <p class="card-text">{{ product.decs }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="row max-auto">
+                <p class="text-center my-search">
+                    0 Results found
+                </p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
