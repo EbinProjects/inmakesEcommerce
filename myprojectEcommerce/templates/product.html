@@ -25,7 +25,15 @@
     <!-- Product Image Section -->
     <div class="col-lg-6 col-md-6 col-sm-12 text-center mb-4">
         <div class="product-image" style="max-width: 400px; margin: 0 auto;">
-            <img src="{{ product.images.url }}" alt="{{ product.name }}" class="img-fluid" style="max-width: 100%; height: auto;">
+                    {% if  product.images %}
+                    <img class="card-img-top my_image"
+                         src="{{ product.images.url }}"
+                         alt="{{ product.names }}">
+                    {% else %}
+                    <img class="card-img-top my_image"
+                         src="{% static 'img/fail.jpg' %}"
+                         alt="{{ product.names }}">
+                    {% endif %}
         </div>
     </div>
 

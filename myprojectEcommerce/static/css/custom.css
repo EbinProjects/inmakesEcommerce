@@ -146,7 +146,7 @@ padding-top : 15px;
 
 .my_image{
   width : 100%;
-  height :auto;
+  height :400px;
 
 }
 
@@ -225,3 +225,57 @@ color :#ff5733 !important;
     margin: 0 auto; /* Centers the image horizontally */
     display: block; /* Ensures the image is treated as a block-level element */
 }
+
+.my_image_1 {
+    width: 300px; /* Set a fixed width */
+    height: auto; /* Keep aspect ratio */
+    float: left; /* Align image to the right */
+    margin-left: 20px; /* Add space between image and text */
+    object-fit: cover; /* Ensure the image fits beautifully within the dimensions */
+    border-radius: 10px; /* Optional: Add rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better aesthetics */
+}
+
+/* Clearing float to avoid layout issues */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+.container1, .container2 {
+    width: 100%; /* Full width of the flex container */
+    padding: 20px; /* Add padding inside containers */
+    box-sizing: border-box; /* Include padding and border in total width */
+}
+
+
+
+
+
+.slide-up-container {
+    overflow: hidden; /* Hide content that moves outside */
+    height: 50vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-up-content {
+    transform: translateY(100%); /* Start off-screen */
+    transition: transform 1s ease-in-out; /* Smooth transition */
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slide-up-content.visible {
+    transform: translateY(0); /* Slide up when visible */
+}
+
+
