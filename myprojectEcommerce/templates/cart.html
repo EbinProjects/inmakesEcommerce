@@ -40,10 +40,18 @@ Cart - ABC Company
                 {% for cart_item in cartitem %}
                 <tr>
                     <td>
+
                         <a href="{{ cart_item.product.get_absolute_url }}">
+                            {% if cart_item.product.images %}
                             <img src="{{ cart_item.product.images.url }}" class="custom_image" style=""
                                  alt="{{ cart_item.product.names }}">
+                            {% else %}
+                            <img src="{% static 'img/fail.jpg' %}" class="custom_image" style=""
+                                 alt="{{ cart_item.product.names }}">
                         </a>
+
+                        {% endif %}
+
 
                     </td>
                     <td class="text-left">
@@ -55,7 +63,8 @@ Cart - ABC Company
                     <td>Total: ${{ cart_item.subTotal }}</td>
                     <td>
                         {% if cart_item.quantity < cart_item.product.stock %}
-                        <a href="{% url 'cart_app:addToCart' cart_item.product.id %}" class="custom_icon">&nbsp;<i class="fa-solid fa-cart-plus"></i>
+                        <a href="{% url 'cart_app:addToCart' cart_item.product.id %}" class="custom_icon">&nbsp;<i
+                                class="fa-solid fa-cart-plus"></i>
                         </a>
 
                         <a href="{% url 'cart_app:minusCart' cart_item.product.id %}" class="custom_icon">
@@ -69,7 +78,7 @@ Cart - ABC Company
                         {% else %}
                         &nbsp;
                         <a href="{% url 'cart_app:minusCart' cart_item.product.id %}" class="custom_icon">
-                             <i class="bi bi-cart"></i>
+                            <i class="bi bi-cart"></i>
                         </a>
                         &nbsp;
                         <a href="{% url 'cart_app:removeCart' cart_item.product.id %}" class="custom_icon">
@@ -100,7 +109,7 @@ Cart - ABC Company
                 <tr>
                     <th>
                         <div class="text-center">
-                             Your Total is : <strong>${{total}}</strong>
+                            Your Total is : <strong>${{total}}</strong>
                         </div>
                     </th>
                 </tr>

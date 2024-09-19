@@ -150,6 +150,13 @@ padding-top : 15px;
 
 }
 
+.my_image_c{
+  width : 80%;
+  height :600px;
+  padding : 5px;
+
+}
+
 .my_title {
   font-size : 16px;
   text-transform : uppercase;
