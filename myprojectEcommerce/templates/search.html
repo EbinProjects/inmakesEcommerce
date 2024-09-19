@@ -23,7 +23,14 @@
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                     <div class="card h-100 text-center">
                         <a href="{{ product.get_url }}">
-                            <img class="card-img-top my_image" src="{{ product.images.url }}" alt="{{ product.names }}">
+                                 {% if product.images %}
+                                                        <img class="card-img-top my_image" src="{{ product.images.url }}" alt="{{ product.names }}">
+
+                            {% else %}
+                                                        <img class="card-img-top my_image" src="{% static 'img/fail.jpg' %}" alt="{{ product.names }}">
+                        </a>
+
+                        {% endif %}
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ product.names }}</h5>
